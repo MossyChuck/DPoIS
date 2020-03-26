@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-import { calculate } from './src';
+import { calculate, calculateL2 } from './src';
 
 const app = express();
 
@@ -13,6 +13,13 @@ app.get('/calculate', (req, res, next) => {
   res.send({ result });
 });
 
-app.listen(3032, () => {
-  console.log('listening 3032');
+app.get('/calculateL2', (req, res, next) => {
+  const N = parseInt(req.query.n, 10);
+  console.log(N);
+  const result = calculateL2(N);
+  res.send({ result });
+});
+
+app.listen(3033, () => {
+  console.log('listening 3033');
 });

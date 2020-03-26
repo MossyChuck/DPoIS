@@ -7,7 +7,7 @@
 
       async function calculate() {
         const n = document.getElementById('ft-n').value;
-        const res = await fetch(`http://localhost:3032/calculate?n=${n}`).then(res => res.json());
+        const res = await fetch(`http://localhost:3033/calculate?n=${n}`).then(res => res.json());
         const { original, dft, fft } = res.result;
         draw(original, 'Original', 'original');
         draw(dft.magnitude, 'DFT Magnitude', 'dft-magnitude');

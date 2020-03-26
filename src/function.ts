@@ -1,7 +1,7 @@
 export class TestFunction {
-  f(x: number): number {
-    const y = Math.cos(3 * x) + Math.sin(3 * x);
-    return y;
+  private f: (x: number) => number;
+  constructor(f: (x: number) => number) {
+    this.f = f;
   }
 
   getData(n: number): number[] {
